@@ -38,7 +38,8 @@ class frame1(wx.Frame):
         super().__init__(None,title = "CALCULATOR")
         panel = Panel1(self)
         self.Show()
-        
+    #GIT CALC
+    
 if __name__ == '__main__':
     app = wx.App(False)
     frame = frame1()
