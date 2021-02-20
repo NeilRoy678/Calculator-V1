@@ -1,11 +1,8 @@
 '''CALCULATOR PROGRAMMER V1.0
     AUTHOR:NEIL ROY
     START DATE : 19th feb 2021
-    END DATE : 
-<<<<<<< HEAD
-'''
-=======
-'''
+    END DATE :
+  '''
 import wx
 class Panel1(wx.Panel):
     def __init__(self,parent):
@@ -70,4 +67,4 @@ if __name__ == '__main__':
     app = wx.App(False)
     frame = frame1()
     app.MainLoop()
->>>>>>> calc
+
