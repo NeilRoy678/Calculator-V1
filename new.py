@@ -1,6 +1,7 @@
 '''CALCULATOR PROGRAMMER V1.0
     AUTHOR:NEIL ROY
-    START DATE : 19th feb 2021
+    START DATE : 19th Feb 2021
+    Break : 20th Feb 2021
     END DATE : 
 '''
 import wx
@@ -51,7 +52,7 @@ class Panel1(wx.Panel):
        button19.Bind(wx.EVT_BUTTON, self.on_button19)
        gs.Add(button1,0,wx.EXPAND)
        gs.Add(button2,0,wx.EXPAND)
-       gs.Add(wx.StaticText(self),wx.EXPAND)
+       gs.Add(wx.StaticText(self,label =""),wx.EXPAND)
        gs.Add(button3,0,wx.EXPAND)
        gs.Add(button4,0,wx.EXPAND)
        gs.Add(button5,0,wx.EXPAND)
@@ -72,7 +73,7 @@ class Panel1(wx.Panel):
        ms.Add(gs,1,wx.HORIZONTAL|wx.EXPAND|wx.ALL,5)
        self.SetSizer(ms)
     def on_button1(self,event):
-        pass
+       pass
     
     def on_button2(self,event):
          print("BUTTON 2")
@@ -81,44 +82,77 @@ class Panel1(wx.Panel):
          print("BUTTON 3")
     
     def on_button4(self,event):
-         print("BUTTON 2")
-    
+         wx.StaticText(self.display,label = '7' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('7')
+            file_handler.close()
     def on_button5(self,event):
          print("BUTTON 1")
-    
+         wx.StaticText(self.display,label = '8' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('8')
+            file_handler.close()
     def on_button6(self,event):
          print("BUTTON 2")
-         
+         wx.StaticText(self.display,label = '9' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('9')
+            file_handler.close()
     def on_button7(self,event):
-         print("BUTTON 1")
+         wx.StaticText(self.display,label = '/' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('/')
+            file_handler.close()
     
     def on_button8(self,event):
          print("BUTTON 2")
-         
+         wx.StaticText(self.display,label = '4' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('4')
+            file_handler.close()
     def on_button9(self,event):
          print("BUTTON 1")
-    
+         wx.StaticText(self.display,label = '5' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('5')
+            file_handler.close()
     def on_button10(self,event):
          print("BUTTON 2")
-         
+         wx.StaticText(self.display,label = '*' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('*')
+            file_handler.close()
     def on_button11(self,event):
          print("BUTTON 1")
     
     def on_button12(self,event):
-        b = "1"
-        wx.StaticText(self.display,label = b ,style = wx.ALIGN_RIGHT)
-    
+        wx.StaticText(self.display,label = '1' ,style = wx.ALIGN_RIGHT)
+        with open("calc.txt",'a') as file_handler:
+            file_handler.write('1')
+            file_handler.close()
     def on_button13(self,event):
-         print("BUTTON 1")
-    
+         wx.StaticText(self.display,label = '2' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('2')
+            file_handler.close()
     def on_button14(self,event):
          print("BUTTON 2")
-         
+         wx.StaticText(self.display,label = '3' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('3')
+            file_handler.close()
     def on_button15(self,event):
-         print("BUTTON 1")
+         wx.StaticText(self.display,label = '-' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('-')
+            file_handler.close()
     
     def on_button16(self,event):
          print("BUTTON 2")
+         wx.StaticText(self.display,label = '0' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('0')
+            file_handler.close()
     
     def on_button17(self,event):
          print("BUTTON 2")
@@ -127,7 +161,10 @@ class Panel1(wx.Panel):
          print("BUTTON 1")
     
     def on_button19(self,event):
-         print("BUTTON 2")
+         wx.StaticText(self.display,label = '+' ,style = wx.ALIGN_RIGHT)
+         with open("calc.txt",'a') as file_handler:
+            file_handler.write('+')
+            file_handler.close()
         
        # self.display = wx.TextCtrl(self, style=wx.TE_READONLY)  #THIS ENABLES READONYL TXT BAR
        # ms.Add(self.display,0,wx.EXPAND,border =4 )
