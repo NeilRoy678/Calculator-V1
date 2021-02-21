@@ -72,7 +72,7 @@ class Panel1(wx.Panel):
        ms.Add(gs,1,wx.HORIZONTAL|wx.EXPAND|wx.ALL,5)
        self.SetSizer(ms)
     def on_button1(self,event):
-         print("BUTTON 1")
+        pass
     
     def on_button2(self,event):
          print("BUTTON 2")
@@ -105,7 +105,8 @@ class Panel1(wx.Panel):
          print("BUTTON 1")
     
     def on_button12(self,event):
-         print("BUTTON 2")
+        b = "1"
+        wx.StaticText(self.display,label = b ,style = wx.ALIGN_RIGHT)
     
     def on_button13(self,event):
          print("BUTTON 1")
