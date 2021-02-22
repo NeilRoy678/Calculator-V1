@@ -203,7 +203,7 @@ class Panel1(wx.Panel):
     
     def on_button19(self,event):
         with open("calc.txt",'a') as file_handler:
-            file_handler.write('+')
+            file_hsandler.write('+')
             file_handler.close()
         with open("calc.txt",'r') as file_handler: 
              file = file_handler.read()
