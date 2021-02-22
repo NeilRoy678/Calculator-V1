@@ -199,11 +199,12 @@ class Panel1(wx.Panel):
              file = file_handler.read()
              for i in range(len(file)):
                  if(file[i] == '+' or file[i] == '-' or file[i] =='*' or file[i] =='/'):
+                     wx.StaticText(self.display,label = "                                                        " ,style = wx.ALIGN_RIGHT)
                      wx.StaticText(self.display,label = str(ops[file[i]]  (int(file[0:i]),int(file[i+1:len(file)]))))
     
     def on_button19(self,event):
         with open("calc.txt",'a') as file_handler:
-            file_hsandler.write('+')
+            file_handler.write('+')
             file_handler.close()
         with open("calc.txt",'r') as file_handler: 
              file = file_handler.read()
