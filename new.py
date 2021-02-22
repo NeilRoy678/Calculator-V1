@@ -79,7 +79,9 @@ class Panel1(wx.Panel):
        ms.Add(gs,1,wx.HORIZONTAL|wx.EXPAND|wx.ALL,5)
        self.SetSizer(ms)
     def on_button1(self,event):
-       pass
+        with open("calc.txt","r+") as file_handler:
+            file_handler.truncate(0)
+            wx.StaticText(self.display,label ="                       ")
     
     def on_button2(self,event):
          print("BUTTON 2")
@@ -147,7 +149,13 @@ class Panel1(wx.Panel):
              wx.StaticText(self.display,label = file ,style = wx.ALIGN_RIGHT)
              file_handler.close()
     def on_button11(self,event):
-         print("BUTTON 1")
+        with open("calc.txt",'a') as file_handler:
+            file_handler.write('*')
+            file_handler.close()
+        with open("calc.txt",'r') as file_handler: 
+             file = file_handler.read()
+             wx.StaticText(self.display,label = file ,style = wx.ALIGN_RIGHT)
+             file_handler.close()
     
     def on_button12(self,event):
         with open("calc.txt",'a') as file_handler:
@@ -201,7 +209,7 @@ class Panel1(wx.Panel):
                  if(file[i] == '+' or file[i] == '-' or file[i] =='*' or file[i] =='/'):
                      wx.StaticText(self.display,label = "                                                        " ,style = wx.ALIGN_RIGHT)
                      wx.StaticText(self.display,label = str(ops[file[i]]  (int(file[0:i]),int(file[i+1:len(file)]))))
-    
+    #+
     def on_button19(self,event):
         with open("calc.txt",'a') as file_handler:
             file_handler.write('+')
@@ -216,7 +224,7 @@ class Panel1(wx.Panel):
        
 class frame1(wx.Frame):
     def __init__(self):
-        super().__init__(None,title = "CALCULATOR")
+        super().__init__(None,title = "CALCULATOR V1.0")
         panel = Panel1(self)
         self.Show()
 
