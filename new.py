@@ -84,10 +84,19 @@ class Panel1(wx.Panel):
             wx.StaticText(self.display,label ="                       ")
     
     def on_button2(self,event):
-         print("PRESSED")
+        with open("calc.txt","r+")as file_handler:
+            file =  file_handler.read()
+        with open("calc.txt","r+") as file_handler:
+            i = len(file)
+            file_handler.truncate(0)
+            file_handler.seek(0)
+            for i in range(i-1):
+                file_handler.write(file[i])
+            wx.StaticText(self.display,label = file_handler.read())
+           
     def on_button3(self,event):
-         self.result_name = None
-         self.Destroy()
+         self.Close()
+         
     def on_button4(self,event):
         with open("calc.txt",'a') as file_handler:
             file_handler.write('7')
