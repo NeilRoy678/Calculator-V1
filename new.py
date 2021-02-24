@@ -15,7 +15,8 @@ class Panel1(wx.Panel):
     def __init__(self,parent):
        super().__init__(parent) 
        ms = wx.BoxSizer(wx.VERTICAL)
-       self.display = wx.TextCtrl(self, wx.TE_READONLY)
+       self.display = wx.TextCtrl(self, wx.TE_RIGHT)
+
        ms.Add(self.display,0,wx.ALL|wx.EXPAND, 4)
        gs = wx.GridSizer(5,4,4,6)
        self.button1 = wx.Button(self, label='Cls')
@@ -77,22 +78,29 @@ class Panel1(wx.Panel):
        gs.Add(self.button18,0,wx.EXPAND)
        gs.Add(self.button19,0,wx.EXPAND)
        ms.Add(gs,1,wx.HORIZONTAL|wx.EXPAND|wx.ALL,5)
+     
        self.SetSizer(ms)
     def on_button1(self,event):
         with open("calc.txt","r+") as file_handler:
             file_handler.truncate(0)
-            wx.StaticText(self.display,label ="                       ")
+            file_handler.seek(0)
+            wx.StaticText(self.display,label = "                        ")
+            
     
     def on_button2(self,event):
         with open("calc.txt","r+")as file_handler:
             file =  file_handler.read()
+            file_handler.close()
         with open("calc.txt","r+") as file_handler:
             i = len(file)
             file_handler.truncate(0)
             file_handler.seek(0)
             for i in range(i-1):
                 file_handler.write(file[i])
-            wx.StaticText(self.display,label = file_handler.read())
+            file = file_handler.read()
+            
+            self.display.SetLabelText(label = file)
+            file_handler.close()
            
     def on_button3(self,event):
          self.Close()
