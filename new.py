@@ -1,15 +1,8 @@
 '''CALCULATOR PROGRAMMER V1.0
     AUTHOR:NEIL ROY
-<<<<<<< HEAD
     START DATE : 19th feb 2021
     END DATE :
   '''
-=======
-    START DATE : 19th Feb 2021
-    Break : 20th Feb 2021
-    END DATE : 
-'''
->>>>>>> calc
 import wx
 import operator 
 ops = {"+" : operator.add,
